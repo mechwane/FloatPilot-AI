@@ -1,0 +1,1 @@
+export function StatusIndicator({label}:{label:string}){return <span style={{display:'inline-flex',alignItems:'center',gap:7,fontSize:12,fontWeight:700,color:'#9a4b0a',background:'#fff5e9',padding:'6px 9px',borderRadius:30}}><span style={{width:7,height:7,borderRadius:'50%',background:'#e99b35'}}/>{label}</span>}

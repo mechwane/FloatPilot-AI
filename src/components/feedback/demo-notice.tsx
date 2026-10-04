@@ -1,0 +1,1 @@
+export function DemoNotice(){return <div role="note" style={{display:'flex',alignItems:'center',gap:10,border:'1px solid #d6e6ff',background:'#f0f6ff',color:'#244d91',padding:'12px 15px',borderRadius:10,fontSize:13,fontWeight:600}}><span aria-hidden="true">ⓘ</span><span>Demo environment · Synthetic data · No funds are moved</span></div>}

@@ -1,0 +1,2 @@
+import { expect, test } from '@playwright/test';
+test('demo changes scenarios locally and keeps disclosure visible',async({page})=>{await page.goto('/demo');await expect(page.getByText('Demo environment · Synthetic data · No funds are moved')).toBeVisible();await page.getByRole('button',{name:/Market-day e-float transfer surge/}).click();await expect(page.getByRole('heading',{name:'Market-day e-float transfer surge'})).toBeVisible();await expect(page.getByText(/does not execute actions, move funds/)).toBeVisible();});

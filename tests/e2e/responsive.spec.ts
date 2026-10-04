@@ -1,0 +1,2 @@
+import { expect, test } from '@playwright/test';
+for(const width of [390,768,1280,1440])test(`landing and demo fit ${width}px viewport`,async({page})=>{await page.setViewportSize({width,height:900});await page.goto('/');expect(await page.locator('body').evaluate(el=>el.scrollWidth<=window.innerWidth)).toBeTruthy();await page.goto('/demo');expect(await page.locator('body').evaluate(el=>el.scrollWidth<=window.innerWidth)).toBeTruthy();});
