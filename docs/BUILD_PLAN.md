@@ -48,3 +48,16 @@ Required commands: `npm run lint`, `npm run typecheck`, `npm run test`, `npm run
 
 ## Phase 9 — Testing, security review and deployment readiness
 **Status: Not started — explicit approval required.**
+
+## Phase 2 — Synthetic authentication, roles, and protected routes
+
+**Status: Implemented in source; verification pending in a Node.js 24 environment.**
+
+- Added typed roles, synthetic personas, session state, and permission definitions.
+- Added a deterministic in-memory React session provider and accessible role switcher.
+- Added client-side route access helpers and feedback for unauthorised previews.
+- Protected the agent, operations, admin, and judge preview routes. The judge scoring preview is read-only and available to all personas.
+- Added role/route permission unit tests.
+- No backend authentication, tokens, database, API, server actions, financial movements, or forecasting were introduced.
+
+Run `npm run lint`, `npx tsc --noEmit`, and `npm run test` to verify Phase 2.

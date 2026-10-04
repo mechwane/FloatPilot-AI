@@ -63,3 +63,19 @@ docs/                    Product, architecture, safety and build documentation
 ## Phase status
 
 **Phase 1 — Design system, application shell and static demo preview.** Implementation scope is limited to the approved Phase 1 brief. Phase 2 requires separate explicit approval. See [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
+
+## Phase 2: Synthetic roles and protected previews
+
+Phase 2 adds a deterministic, client-side persona session for hackathon demonstration only. The default persona is the read-only Judge; use the **Viewing as** selector in the public header to switch between the Agent, Operations Manager, Auditor / Admin, and Judge personas. No credentials, tokens, backend authentication, database, or server session are used. The selected persona exists in in-memory React state and resets to Judge on a full reload.
+
+Protected preview access is role-based: Agents can view `/agent`; Operations Managers can view `/agent` and `/operations`; Admin can view `/agent`, `/operations`, and `/admin`; the Judge can view the read-only `/judge` scoring preview. The `/judge` route is intentionally available to all personas as a read-only scoring preview. These client-side guards are demo UX controls, not production security boundaries.
+
+### Phase 2 verification
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run test
+```
+
+Phase 2 does not add Supabase, real authentication, API endpoints, financial operations, or forecasting.
